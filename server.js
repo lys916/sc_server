@@ -3,7 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-// const userRoutes = require('./user/userRoutes');
+const userRoutes = require('./user/UserRoutes');
 const dailyFoodRouter = require('./dailyFood/DailyFoodRoutes');
 const customFoodRouter = require('./customFood/CustomFoodRoutes');
 const systemFoodRouter = require('./systemFood/SystemFoodRoutes');
