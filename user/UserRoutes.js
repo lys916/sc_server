@@ -1,5 +1,5 @@
 const express = require('express');
-const User = require('./userModel.js');
+const User = require('./UserModel.js');
 const userRouter = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');

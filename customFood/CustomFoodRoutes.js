@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const customFoodRouter = express.Router();
 
 const CustomFood = require('./CustomFoodModel');
-const User = require('../user/userModel');
 
 customFoodRouter.post('/createFood', function(req, res){
     console.log('creating custom food');
