@@ -20,7 +20,7 @@ server.get('/', function(req, res) {
 });
 
 mongoose
-  .connect('mongodb://localhost/Getfit')
+  .connect('mongodb://lys:lys916@ds149742.mlab.com:49742/get-fit')
   .then(conn => {
     console.log('connected to mongo Get_fit');
   })
