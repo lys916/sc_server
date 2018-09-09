@@ -3,10 +3,10 @@ const SystemFood = require('./systemFood/SystemFoodModel');
 const {systemFoodList} = require('./systemFoodList.js');
 
 const addSystemFood = ()=>{
-    // console.log('food lsit', systemFoodList);
-    // SystemFood.create(systemFoodList).then(foods => {
-	// 	console.log('System food created! ', foods.length);
-	// });
+    console.log('food lsit', systemFoodList);
+    SystemFood.create(systemFoodList).then(foods => {
+		console.log('System food created! ', foods.length);
+	});
 }
 
 // const getAllTeams = ()=>{

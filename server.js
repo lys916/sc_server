@@ -36,5 +36,5 @@ server.use('/systemFood', systemFoodRouter);
 const port = process.env.PORT || 5000;
 server.listen(port, () => {
   console.log(`API running on http://localhost:${port}.`);
-  // addSystemFood();
+  addSystemFood();
 });
