@@ -11,7 +11,7 @@ const DailyFoodSchema = new mongoose.Schema({
     editing: {type: Boolean, default: false},
     createdOn: {type: Date, default: Date.now},
     dateString: {type: String, required: true},
-    user: {type: ObjectId, ref: 'User'}
+    userName: {type: String, required: true}
 });
 
 const DailyFoodModel = mongoose.model('DailyFood', DailyFoodSchema);
