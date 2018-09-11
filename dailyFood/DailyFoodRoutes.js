@@ -11,7 +11,8 @@ dailyFoodRouter.post('/createFood', function(req, res){
 });
 
 dailyFoodRouter.get('/getFoods', function(req, res){
-    const {date, userName} = req.query;
+	const {date, userName} = req.query;
+	console.log('get food data', req.body)
 	DailyFood.find({dateString: date, userName}).then(post => {
 		res.json(post);
 	});
