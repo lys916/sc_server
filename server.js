@@ -12,15 +12,15 @@ const { addSystemFood } = require('./util_functions');
 
 const server = express();
 
-const corsOptions = {
-  "origin": (
-    //  "https://simple-count.herokuapp.com"
-      "http://localhost:3000"
-  ),
-  "credentials": true,
-};
+// const corsOptions = {
+//   "origin": (
+//     //  "https://simple-count.herokuapp.com"
+//       "http://localhost:3000"
+//   ),
+//   "credentials": true,
+// };
 
-server.use(cors(corsOptions));   // https://medium.com/trisfera/using-cors-in-express-cac7e29b005b
+server.use(cors());   // https://medium.com/trisfera/using-cors-in-express-cac7e29b005b
 server.use(bodyParser.json());
 
 server.get('/', function(req, res) {

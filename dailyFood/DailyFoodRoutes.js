@@ -4,6 +4,7 @@ const dailyFoodRouter = express.Router();
 const DailyFood = require('./DailyFoodModel');
 
 dailyFoodRouter.post('/createFood', function(req, res){
+	console.log(req.body);
 	DailyFood.create(req.body).then(post => {
 		res.json(post);
 	});
