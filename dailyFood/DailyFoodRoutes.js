@@ -10,8 +10,8 @@ dailyFoodRouter.post('/createFood', function(req, res){
 });
 
 dailyFoodRouter.get('/getFoods', function(req, res){
-    const {date} = req.query;
-	DailyFood.find({dateString: date}).then(post => {
+    const {date, id} = req.query;
+	DailyFood.find({dateString: date, user: id}).then(post => {
 		res.json(post);
 	});
 });
