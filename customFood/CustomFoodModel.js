@@ -7,6 +7,7 @@ const CustomFoodSchema = new mongoose.Schema({
     fat: {type: Number, required: true},
     carb: {type: Number, required: true},
     protein: {type: Number, required: true},
+    amount: {type: Number, required: true},
     active: {type: Boolean, default: false},
     editing: {type: Boolean, default: false},
     user: {type: ObjectId, ref: 'User'},

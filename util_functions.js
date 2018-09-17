@@ -39,3 +39,16 @@ const addSystemFood = ()=>{
 // }
 
 module.exports =  { addSystemFood };
+
+
+// {
+//   "measurements": [
+//       "inch"
+//   ],
+//   "name": "Banana",
+//   "inch": {
+//       "fat": 0.1,
+//       "carb": 3.8,
+//       "protein": 0.2
+//   }
+// }
