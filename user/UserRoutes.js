@@ -7,17 +7,24 @@ const jwt = require('jsonwebtoken');
 userRouter.post('/signup', function(req, res){
 	console.log('XXXXX user signup', req.body);
 	const { name, password } = req.body;
-	const user = new User();
-	user.username = name;
+	User.find({username: name}).then(userFound=>{
+		if(userFound){
+			res.json({errorMessage: 'This username is taken, choose another one.'})
+		}else{
+			const user = new User();
+			user.username = name;
 
-	bcrypt.hash(password, 11, (err, hash) => {
-		if (err) throw err;
-		user.password = hash;
-		user.save().then(savedUser => {
-			console.log('XXXXX signup sucesss');
-			res.json(savedUser);
-		});
-	});
+			bcrypt.hash(password, 11, (err, hash) => {
+				if (err) throw err;
+				user.password = hash;
+				user.save().then(savedUser => {
+					console.log('XXXXX signup sucesss');
+					res.json(savedUser);
+				});
+			});
+		}
+	})
+	
 
 // ** ANOTHER SOLUTION, SAVE HASH AND SALT IN DB **
  // user.save(function(err) {
@@ -46,14 +53,13 @@ userRouter.post('/login', function(req, res){
 		// 	username: user.name,
 		// 	userId: user._id
 		// };
-		console.log('found', user.username);
 		if(!user){
-			res.json({error: 'Wrong username or password'});
+			res.json({errorMessage: 'Wrong username or password'});
 		}
 		if(user){
 			bcrypt.compare(password, user.password, function(err, valid) {
     			if(!valid){
-    				res.json({error: 'Wrong username or password'});
+    				res.json({errorMessage: 'Wrong username or password'});
 				}
 				console.log('pwd valid', true)
     			// const token = jwt.sign(userObject, 'This is a secret string', { expiresIn: '1h' });
