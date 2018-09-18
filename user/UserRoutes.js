@@ -8,6 +8,7 @@ userRouter.post('/signup', function(req, res){
 	console.log('XXXXX user signup', req.body);
 	const { name, password } = req.body;
 	User.find({username: name}).then(userFound=>{
+		console.log('user found', userFound);
 		if(userFound){
 			res.json({errorMessage: 'This username is taken, choose another one.'})
 		}else{

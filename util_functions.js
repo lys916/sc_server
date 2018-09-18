@@ -43,12 +43,12 @@ module.exports =  { addSystemFood };
 
 // {
 //   "measurements": [
-//       "inch"
+//       "scoop"
 //   ],
-//   "name": "Banana",
+//   "name": "Protein & Green Vega Berry",
 //   "inch": {
-//       "fat": 0.1,
-//       "carb": 3.8,
-//       "protein": 0.2
+//       "fat": 2,
+//       "carb": 4,
+//       "protein": 20
 //   }
 // }
