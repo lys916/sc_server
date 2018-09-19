@@ -17,6 +17,13 @@ systemFoodRouter.get('/getFoods', function(req, res){
 	});
 });
 
+systemFoodRouter.post('/', function(req, res){
+	console.log(req.body);
+	SystemFood.create(req.body).then(food => {
+		res.json(food);
+	});
+});
+
 // customFoodRouter.delete('/deleteFood', function(req, res){
 //     const {id} = req.query;
 // 	CustomFood.findByIdAndRemove(id).then(deleted => {
@@ -53,11 +60,6 @@ systemFoodRouter.get('/getFoods', function(req, res){
 // 	}
 // });
 
-// postRouter.post('/', function(req, res){
-// 	console.log(req.body);
-// 	// Post.find().then(posts => {
-// 	// 	res.json(posts);
-// 	// });
-// });
+
 
 module.exports = systemFoodRouter;
