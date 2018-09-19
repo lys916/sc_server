@@ -17,8 +17,7 @@ systemFoodRouter.get('/getFoods', function(req, res){
 	});
 });
 
-systemFoodRouter.post('/', function(req, res){
-	console.log(req.body);
+systemFoodRouter.post('/addFood', function(req, res){
 	SystemFood.create(req.body).then(food => {
 		res.json(food);
 	});
