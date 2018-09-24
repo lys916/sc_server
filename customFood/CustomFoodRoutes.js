@@ -11,7 +11,7 @@ customFoodRouter.post('/createFood', function(req, res){
 	});
 });
 
-customFoodRouter.update('/updateFood', function(req, res){
+customFoodRouter.post('/updateFood', function(req, res){
     console.log('updating custom food', req.body);
 	CustomFood.findByIdAndUpdate(req.body._id, req.body).then(updated => {
 		res.json(updated);
