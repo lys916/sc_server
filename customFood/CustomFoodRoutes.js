@@ -11,6 +11,13 @@ customFoodRouter.post('/createFood', function(req, res){
 	});
 });
 
+customFoodRouter.update('/updateFood', function(req, res){
+    console.log('updating custom food', req.body);
+	CustomFood.findByIdAndUpdate(req.body._id, req.body).then(updated => {
+		res.json(updated);
+	});
+});
+
 customFoodRouter.get('/getFoods', function(req, res){
     const {userId} = req.query;
     console.log('get custom foods id', userId);
