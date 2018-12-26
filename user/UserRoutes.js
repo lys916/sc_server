@@ -28,14 +28,14 @@ userRouter.post('/signup', function(req, res){
 	
 
 // ** ANOTHER SOLUTION, SAVE HASH AND SALT IN DB **
- // user.save(function(err) {
- //    var token;
- //    token = user.generateJwt();
- //    res.status(200);
- //    res.json({
- //      "token" : token
- //    });
- //  });
+   // user.save(function(err) {
+   //    var token;
+   //    token = user.generateJwt();
+   //    res.status(200);
+   //    res.json({
+   //      "token" : token
+   //    });
+   //  });
 
 	// user.save().then(savedUser => {
 	// 	let token;
@@ -62,7 +62,9 @@ userRouter.post('/login', function(req, res){
     			if(!valid){
     				res.json({errorMessage: 'Wrong username or password'});
 				}
-				console.log('pwd valid', true)
+            console.log('pwd valid', true)
+            // *TODO
+            // skipping jwt auth for testing, will come back to finish this
     			// const token = jwt.sign(userObject, 'This is a secret string', { expiresIn: '1h' });
         		res.json(user);
 			});

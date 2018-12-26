@@ -12,9 +12,13 @@ const SystemFoodSchema = new mongoose.Schema({
     lb: mongoose.Schema.Types.Mixed,
     scoop: mongoose.Schema.Types.Mixed,
     inch: mongoose.Schema.Types.Mixed,
-    medium: mongoose.Schema.Types.Mixed,
-    large: mongoose.Schema.Types.Mixed,
-    small: mongoose.Schema.Types.Mixed,
+    md: mongoose.Schema.Types.Mixed,
+    lg: mongoose.Schema.Types.Mixed,
+    sm: mongoose.Schema.Types.Mixed,
+    piece: mongoose.Schema.Types.Mixed,
+    item: mongoose.Schema.Types.Mixed,
+    serv: mongoose.Schema.Types.Mixed,
+    pack: mongoose.Schema.Types.Mixed,
 });
 
 const SystemFoodModel = mongoose.model('SystemFood', SystemFoodSchema);
